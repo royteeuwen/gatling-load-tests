@@ -1,0 +1,10 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: gatling-load-tests-route
+spec:
+  to:
+    kind: Service
+    name: gatling-load-tests-service
+  port:
+    targetPort: 8080

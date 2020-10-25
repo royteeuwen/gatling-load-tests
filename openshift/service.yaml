@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: gatling-load-tests-service
+spec:
+  selector:
+    app: gatling-load-tests
+  ports:
+    - port: 8080
+      targetPort: 8080

@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gatling-load-tests-deployment
+spec:
+  selector:
+    matchLabels:
+      app: gatling-load-tests
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: gatling-load-tests
+    spec:
+      containers:
+      - name: gatling-load-tests
+        image: gatling-load-tests:latest
+        ports:
+        - containerPort: 8080
+        resources:
+          limits:
+            memory: 512Mi
+            cpu: "1"
+          requests:
+            memory: 256Mi
+            cpu: "0.2"
