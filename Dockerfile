@@ -28,3 +28,4 @@ COPY src/ /home/maven/gatling/src
 COPY pom.xml /home/maven/gatling
 
 CMD ["mvn", "gatling:test"]
+
