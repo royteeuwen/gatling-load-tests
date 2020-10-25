@@ -1,5 +1,10 @@
 FROM jtim/maven-non-root:3.5.4-jdk-8-alpine
 
+USER root
+RUN addgroup maven root
+
+USER maven
+
 RUN mkdir /home/maven/gatling
 WORKDIR /home/maven/gatling
 

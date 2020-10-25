@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: gatling-load-tests
-        image: gatling-load-tests:latest
+        image: image-registry.openshift-image-registry.svc:5000/gatling-load-tests/gatling-load-tests:latest
         ports:
         - containerPort: 8080
         resources:
