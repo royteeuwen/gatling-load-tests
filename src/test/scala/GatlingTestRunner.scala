@@ -7,10 +7,11 @@ object GatlingTestRunner {
 
   def main(args: Array[String]): Unit = {
     // this is where you specify the class you want to run
-    val simClass = classOf[HomePageSimulation].getName
+    val simClass = classOf[SearchSimulation].getName
 
     val props = new GatlingPropertiesBuilder
     props.simulationClass(simClass)
+    props.resourcesDirectory("../resources")
     props.resultsDirectory("./target/reports")
 
     Gatling.fromMap(props.build)
